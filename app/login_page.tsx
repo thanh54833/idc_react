@@ -33,7 +33,6 @@ const LoginPage: React.FC = () => {
         }
     }
 
-
     useEffect(() => {
         fetchToken().then(value => {
         });
