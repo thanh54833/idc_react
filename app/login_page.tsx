@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 
 const LoginPage: React.FC = () => {
@@ -27,15 +27,25 @@ const LoginPage: React.FC = () => {
             });
             const data = await response.json();
             const token = data["access_token"];
-            setApiResponse(token);
+            setApiResponse(data);
         } catch (e) {
             console.log(e);
         }
     }
 
+
+    useEffect(() => {
+        fetchToken().then(value => {
+        });
+    }, []);
+
+
     return <div className="flex h-screen w-screen flex-col items-center justify-center bg-black ">
-        <div className={"h-80 w-80 bg-white"}>
-            {apiResponse && <pre>{JSON.stringify(apiResponse, null, 2)}</pre>}
+        <div className={"h-80 w-1/2 bg-white"}>
+            {apiResponse && <pre className={"text-black size-2"}>{JSON.stringify(apiResponse, null, 2)}</pre>}
+        </div>
+        <div className={"h-80 w-80 bg-white mt-10"}>
+            {apiResponse && <pre className={"text-black size-2"}>{JSON.stringify(apiResponse, null, 2)}</pre>}
         </div>
         <div className={"flex-col flex  h-10 w-80 bg-blue-950 mt-10 items-center justify-center"}>
             <a className={""} onClick={async (event) => {
