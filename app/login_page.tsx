@@ -3,35 +3,7 @@ import React, {useEffect, useState} from "react";
 
 
 const LoginPage: React.FC = () => {
-
-
     const [apiResponse, setApiResponse] = useState("null");
-
-    // const fetchToken = async () => {
-    //     const params = new URLSearchParams();
-    //     params.append('grant_type', 'password');
-    //     params.append('username', 'user_1_4');
-    //     params.append('password', 'ALfSzDfky9udTjiBQDil@');
-    //     params.append('client_id', 'mobile');
-    //     params.append('client_secret', 'bd5f092087754fed8acc376752b4ce16');
-    //     params.append('scope', 'openid');
-    //
-    //     try {
-    //         const response = await fetch('http://localhost:3000/ids/connect/token', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/x-www-form-urlencoded'
-    //             },
-    //             body: params
-    //         });
-    //         const data = await response.json();
-    //         const token = data["access_token"];
-    //         setApiResponse(data);
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // }
 
     const fetchLogin = async () => {
         const response = await fetch('http://localhost:8000/login', {
