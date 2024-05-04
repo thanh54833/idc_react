@@ -14,12 +14,8 @@ const LoginPage: React.FC = () => {
             body: '',
         });
 
-        console.log('Response:', response);
-        console.log('Response body:', response.body);
-
         if (response.headers.get('Content-Type') === 'application/json') {
             const data = await response.json();
-            console.log('Data:', data);
             const token = data["access_token"];
             setApiResponse(data);
         } else {
@@ -35,7 +31,7 @@ const LoginPage: React.FC = () => {
 
 
     return <div className="flex h-screen w-screen flex-col items-center justify-center bg-black ">
-        <div className={"h-80 w-1/2 bg-white"}>
+        <div className={"h-60 w-1/2 bg-white"}>
             {apiResponse && <pre className={"text-black size-2"}>{JSON.stringify(apiResponse, null, 2)}</pre>}
         </div>
         <div className={"h-80 w-80 bg-white mt-10"}>
