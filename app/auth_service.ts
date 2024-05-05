@@ -1,3 +1,4 @@
+
 import {User, UserManager, WebStorageStateStore} from 'oidc-client';
 
 export default class Auth_service {
@@ -5,11 +6,11 @@ export default class Auth_service {
 
     constructor() {
         const settings = {
-            authority: 'https://ids.concung.com/identity',
-            client_id: 'your-client-id',
-            redirect_uri: `${window.location.origin}/callback`,
+            authority: 'http://localhost:3000', // updated from JSON
+            client_id: 'mobile', // updated from JSON
+            redirect_uri: 'http://localhost:3000/ids', // updated from JSON
             response_type: 'code',
-            scope: 'openid profile api1',
+            scope: 'openid', // updated from JSON
             post_logout_redirect_uri: `${window.location.origin}/`,
             userStore: new WebStorageStateStore({store: window.localStorage}),
         };
