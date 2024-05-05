@@ -1,4 +1,4 @@
-import { UserManager, WebStorageStateStore, User } from 'oidc-client';
+import {User, UserManager, WebStorageStateStore} from 'oidc-client';
 
 export default class Auth_service {
     private userManager: UserManager;
@@ -11,7 +11,7 @@ export default class Auth_service {
             response_type: 'code',
             scope: 'openid profile api1',
             post_logout_redirect_uri: `${window.location.origin}/`,
-            userStore: new WebStorageStateStore({ store: window.localStorage }),
+            userStore: new WebStorageStateStore({store: window.localStorage}),
         };
         this.userManager = new UserManager(settings);
     }
