@@ -1,16 +1,16 @@
 {
-"version": 2,
-"name": "idc-simple",
-"builds": [
-{
-"src": "package.json",
-"use": "@vercel/next"
-}
-],
-"routes": [
-{
-"src": "/(.*)",
-"dest": "/"
-}
-]
+  "version": 2,
+  "name": "idc-simple",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
